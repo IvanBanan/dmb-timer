@@ -1,0 +1,635 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Release Notes</title>
+<style>
+
+
+
+
+
+
+
+
+
+
+
+body {
+    margin: 0;
+    color: #333333;
+}
+h1 {
+    margin: 1em;
+}
+.main-field {
+    width: 1024px;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.line {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #A9A9A9;
+}
+.fill {
+    width: 0%;
+    transition-property: width;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.47, 0, 0.75, 0.72);
+}
+.text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+.all-seasons {
+    width: 300px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.season h4 {
+    margin: 0;
+}
+
+
+.season .line {
+    height: 20px;
+    margin: 0 0 7px;
+    border-radius: 5px;
+}
+
+.season .fill {
+    height: 20px;
+}
+
+.season .text {
+    line-height: 20px;
+    font-size: 1em;
+}
+
+.progress {
+    margin: 0 0 40px;
+    box-sizing: border-box;
+}
+#ProgressLine {
+    border-radius: 10px;
+    -background-color: #F0F8FF;
+}
+#ProgressFill {
+    height: 50px;
+    background-color: #6CA9DE;
+}
+#ProgressText {
+    line-height: 50px;
+    font-size: 2em;
+}
+
+#summerLine {
+    -background-color: #F0F8FF;
+}
+#summerFill {
+    background-color: #FF5353;
+}
+#summerText {
+
+}
+
+#authumLine {
+    -background-color: #F0F8FF;
+}
+#authumFill {
+    background-color: #FFDF3F;
+}
+#authumText {
+
+}
+
+
+#winterLine {
+    -background-color: #F0F8FF;
+}
+#winterFill {
+    background-color: #ECF6FF;
+}
+#winterText {
+
+}
+
+#springLine {
+    -background-color: #F0F8FF;
+}
+#springFill {
+    background-color: #5DE83A;
+}
+#springText {
+
+}
+
+.all-metrics {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.schedule {
+
+    display: inline-block;
+
+    font-size: 14px;
+    font-family: sans-serif;
+}
+.schedule-controls {
+    position: relative;
+}
+
+.arrows {
+    /*     display: inline-block;
+            vertical-align: middle; */
+    height: 1em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    border: solid transparent;
+    border-width: .5em;
+    box-sizing: border-box;
+}
+
+.arrows.prev-arrow {
+    left: 0;
+    border-left-width: 0;
+    border-right-color: black;
+}
+
+.arrows.next-arrow {
+    right: 0;
+    border-right-width: 0;
+    border-left-color: black;
+}
+
+#CurMonth {
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+}
+
+#Calendar {
+    width: 14em;
+    height: 12em;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.calendar-list {
+    display: inline-table;
+    border-collapse: collapse;
+    border: 1px solid #B5B5B5;
+}
+.calendar-week {
+    display: table-row;
+    font-size: 1em;
+
+}
+.calendar-day {
+    width: 2em;
+    height: 2em;
+    display: table-cell;
+    border: 1px solid #B5B5B5;
+    background-color: #444444;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-family: calibri;
+    color: #6B6B6B;
+}
+.calendar-day.current {
+    color: #D0D0D0;
+}
+</style>
+<body>
+  <div class='main-field'>
+  <h1>Служи солдат, как я служил...</h1>
+    <div class='progress'>
+    <div id='ProgressLine' class='line'>
+        <div id='ProgressText' class='text'>
+
+        </div>
+        <div id='ProgressFill' class='fill'>
+
+        </div>
+    </div>
+    </div>
+
+    <div class="all-seasons">
+        <div class='season'>
+            <h4>Осень</h4>
+            <div id='AuthumLine' class='line'>
+                <div id='AuthumText' class='text'>
+
+                </div>
+                <div id='AuthumFill' class='fill'>
+
+                </div>
+            </div>
+        </div>
+        <div class='season'>
+            <h4>Зима</h4>
+            <div id='WinterLine' class='line'>
+                <div id='WinterText' class='text'>
+
+                </div>
+                <div id='WinterFill' class='fill'>
+
+                </div>
+            </div>
+        </div>
+        <div class='season'>
+            <h4>Весна</h4>
+            <div id='SpringLine' class='line'>
+                <div id='SpringText' class='text'>
+
+                </div>
+                <div id='SpringFill' class='fill'>
+
+                </div>
+            </div>
+        </div>
+        <div class='season'>
+            <h4>Лето</h4>
+            <div id='SummerLine' class='line'>
+                <div id='SummerText' class='text'>
+
+                </div>
+                <div id='SummerFill' class='fill'>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="all-metrics">
+        <div id='Days'>
+        </div>
+        <div id='Hours'>
+        </div>
+        <div id='Minutes'>
+        </div>
+        <div id='Seconds'>
+        </div>
+    </div>
+
+
+
+<!--     <div class="schedule">
+        <div class="schedule-controls">
+            <div id="PreviousList" class="arrows prev-arrow">
+            </div>
+            <div id="CurMonth" class="cur-month">
+            July
+            </div>
+            <div id="NextList" class="arrows next-arrow">
+            </div>
+        </div>
+
+        <div id="Calendar">
+        </div>
+
+
+    </div> -->
+
+  </div>
+
+  <script type="text/javascript">
+
+
+
+
+
+
+
+
+
+
+
+
+
+Date.prototype.getSeason = function getSeason() {
+    var aSeasons;
+    aSeasons = ['winter', 'winter', 'spring', 'spring', 'spring', 'summer', 'summer', 'summer', 'authum', 'authum', 'authum', 'winter'];
+    return aSeasons[this.getMonth()];
+}
+
+Date.prototype.getDayName = function getDayName(sLang) {
+    var aDayNames;
+    aDayNames = {
+        ru: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+        en: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    };
+
+    if (sLang && (aDayNames[sLang])) {
+        return aDayNames[sLang][this.getDay()];
+    }
+    else {
+        return aDayNames['en'][this.getDay()];
+    }
+
+
+}
+
+Date.prototype.getMonthName = function getMonthName(sLang) {
+    var aMonthNames;
+    aMonthNames = {
+        ru: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    };
+
+    if (sLang && (aMonthNames[sLang])) {
+        return aMonthNames[sLang][this.getMonth()];
+    }
+    else {
+        return aMonthNames['en'][this.getMonth()];
+    }
+
+
+}
+
+MyDate = (function() {
+    var startDate, nowDate, endDate, seasonPeriods;
+    startDate = new Date(2015,10,20);
+    endDate = new Date(2016,10,19);
+    enterNowDate();
+//     enterSeasonPeriods();
+    enterSeasonProgress();
+
+    function enterNowDate() {
+        nowDate = new Date();
+        if (nowDate > endDate) {
+            nowDate = endDate;
+        }
+    }
+//     определение периодов времен года
+//     function enterSeasonPeriods() {
+    (function (){
+        var aSeasons, iterMonth, vSt, vEnd, vSeas, flag;
+        if (endDate < startDate) {
+            return;
+        }
+        aSeasons = {
+            winter: [11, 0, 1],
+            spring: [2, 3, 4],
+            summer: [5, 6, 7],
+            authum: [8, 9, 10]
+        };
+        seasonPeriods = {};
+        flag = false;
+        vSt = startDate;
+
+        while (!flag) {
+            vSeas = vSt.getSeason();
+            aSeasons[vSeas].find(function(val, key, arr) {
+                if (val == vSt.getMonth()) {
+                    iterMonth = arr.length - key;
+                    //сколько месяцев до предельной границы периода
+                    return true;
+                }
+            }
+            );
+
+            vEnd = new Date(new Date(vSt.getFullYear(),vSt.getMonth() + iterMonth,1) - 1);
+
+            if (vEnd > endDate) {
+                vEnd = endDate;
+                flag = true;
+            }
+
+            if (!seasonPeriods[vSeas]) {
+                seasonPeriods[vSeas] = [];
+                seasonPeriods[vSeas].allSeasonTime = 0;
+            }
+
+            seasonPeriods[vSeas].push({
+                startDate: vSt,
+                endDate: vEnd
+            });
+
+            seasonPeriods[vSeas].allSeasonTime += (vEnd - vSt);
+
+            vSt = new Date(vEnd - 0 + 1);
+        }
+    }());
+    function enterSeasonProgress() {
+        var i, aPeriods;
+
+        for (key in seasonPeriods) {
+            aPeriods = seasonPeriods[key];
+            seasonPeriods[key].pastSeasonTime = 0;
+
+            for (i = 0; i < aPeriods.length; i++) {
+                if (nowDate > aPeriods[i].endDate) {
+                    seasonPeriods[key].pastSeasonTime += (aPeriods[i].endDate - aPeriods[i].startDate);
+                } else {
+                    if ((nowDate <= aPeriods[i].endDate) && (nowDate > aPeriods[i].startDate)) {
+                        seasonPeriods[key].pastSeasonTime += (nowDate - aPeriods[i].startDate);
+                    }
+                }
+            }
+
+            seasonPeriods[key].progress = seasonPeriods[key].pastSeasonTime / seasonPeriods[key].allSeasonTime;
+        }
+    }
+
+    function deployCalendar() {
+        var iW, iD, DOMcalendar, newDiv, newDivTr, newDivTd, flag, vDate, vCurMonth, vCurYear;
+        DOMcalendar = document.getElementById('Calendar');
+
+        flag = false;
+        vDate = new Date(startDate);
+        vDate.setDate(1);
+
+
+        //добавляем месяцы в календарь
+        while (vDate <= endDate) {
+            newDiv = document.createElement('div');
+            newDiv.id = 'list_' + vDate.getFullYear() + '_' + vDate.getMonth();
+            newDiv.classList.add('calendar-list');
+            newDiv.setAttribute('year', vDate.getFullYear());
+            newDiv.setAttribute('month', vDate.getMonth());
+            DOMcalendar.appendChild(newDiv);
+
+            vCurYear = vDate.getFullYear();
+            // запоминаем текущий год
+            vCurMonth = vDate.getMonth();
+            // запоминаем текущий месяц
+            vDate.setDate(vDate.getDate() - ((vDate.getDay() + 6) % 7));
+            //откат на ближайший прошедший понедельник
+
+            for (iW = 0; iW < 6; iW++) {
+                newDivTr = document.createElement('div');
+                newDivTr.classList.add('calendar-week');
+                newDiv.appendChild(newDivTr);
+                for (iD = 0; iD < 7; iD++) {
+                    newDivTd = document.createElement('div');
+                    newDivTd.classList.add('calendar-day');
+                    newDivTd.setAttribute('year', vDate.getFullYear());
+                    newDivTd.setAttribute('month', vDate.getMonth());
+                    newDivTd.setAttribute('date', vDate.getDate());
+                    newDivTd.setAttribute('day', vDate.getDayName());
+
+                    if (vCurMonth == vDate.getMonth()) {
+                        newDivTd.classList.add('current');
+                    }
+
+                    newDivTd.innerText = vDate.getDate();
+                    newDivTr.appendChild(newDivTd);
+                    vDate.setDate(vDate.getDate() + 1);
+                }
+            }
+
+            //             while (vDate.getMonth() == vCurMonth) {
+            //                 newDivTr = document.createElement('div');
+            //                 newDivTr.id = 'week_' + vDate.getFullYear() + '_' + vDate.getMonth();
+            //                 //запоминаем текущий месяц и прибавляем день
+            //                 vCurMonth = vDate.getMonth();
+            //                 vDate.setDate(vDate.getDate() + 1);
+            //             }
+            vDate.setFullYear(vCurYear);
+            vDate.setMonth(vCurMonth + 1);
+            vDate.setDate(1);
+        }
+
+
+        document.getElementById('PreviousList').onclick = function(e) {
+            console.log(e);
+        };
+
+        document.getElementById('NextList').onclick = function(e) {
+            console.log(e);
+        };
+
+
+
+
+    }
+
+    function refresh() {
+        enterNowDate();
+        enterSeasonProgress();
+    }
+
+    function getSeconds(sTime) {
+        var result, vSt, vEnd, i;
+        if (sTime == 'past') {
+            vSt = startDate;
+            vEnd = nowDate;
+        } else {
+            vSt = nowDate;
+            vEnd = endDate;
+        }
+
+        result = (vEnd - vSt) / 1000;
+
+        return result;
+    }
+    function getDays(sTime) {
+        var result;
+        result = getSeconds(sTime) / 60 / 60 / 24;
+        return result;
+    }
+    function getHours(sTime) {
+        var result;
+        result = getSeconds(sTime) / 60 / 60;
+        return result;
+    }
+    function getMinutes(sTime) {
+        var result;
+        result = getSeconds(sTime) / 60;
+        return result;
+    }
+
+    function getProgress(sTime) {
+        var result;
+        result = (getSeconds(sTime) / (endDate - startDate) * 1000);
+        return result;
+    }
+
+
+
+    return {
+        startDate: startDate,
+        nowDate: nowDate,
+        endDate: endDate,
+        getDays: getDays,
+        getHours: getHours,
+        getMinutes: getMinutes,
+        getSeconds: getSeconds,
+        getProgress: getProgress,
+        seasonPeriods: seasonPeriods,
+        deployCalendar: deployCalendar,
+        refresh: refresh
+    }
+}
+());
+
+//setTimeout(function(){refreshTL();},500);
+
+function refreshTL() {
+    var key, progress, fillElem, textElem;
+    MyDate.refresh();
+
+    //заполнение таймлайна
+    progress = MyDate.getProgress('past') * 100;
+
+    if (ProgressFill) {
+        ProgressFill.style.width = progress.toFixed(2) + '%';
+    }
+    if (ProgressText) {
+        ProgressText.innerText = progress.toFixed(7) + '%';
+    }
+
+    //заполнение таймлайнов времен года
+    for (key in MyDate.seasonPeriods) {
+        progress = MyDate.seasonPeriods[key].progress * 100
+        fillElem = document.querySelector('#' + key + 'Fill');
+        textElem = document.querySelector('#' + key + 'Text');
+        if (fillElem) {
+            fillElem.style.width = progress.toFixed(2) + '%';
+        }
+        if (textElem) {
+            textElem.innerText = (progress == 100) ? progress + '%' : progress.toFixed(7) + '%';
+            ;
+        }
+    }
+
+
+    //     заполнение метрик
+    if (Days) {
+        Days.innerText = Math.ceil(MyDate.getDays()) + ' дней до дома';
+    }
+    if (Hours) {
+        Hours.innerText = Math.ceil(MyDate.getHours()) + ' часов до дома';
+    }
+    if (Minutes) {
+        Minutes.innerText = Math.ceil(MyDate.getMinutes()) + ' минут до дома';
+    }
+    if (Seconds) {
+        Seconds.innerText = Math.ceil(MyDate.getSeconds()) + ' секунд до дома';
+    }
+
+
+    setTimeout(function() {
+        refreshTL();
+    }
+    , 100);
+}
+</script>
+
+</body>
+</html>
